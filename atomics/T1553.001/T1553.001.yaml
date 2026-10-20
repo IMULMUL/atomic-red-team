@@ -10,10 +10,9 @@ atomic_tests:
   input_arguments:
     app_path:
       description: Path to app to be used
-      type: Path
+      type: path
       default: myapp.app
   executor:
     command: |
-      sudo xattr -d com.apple.quarantine #{app_path}
-    elevation_required: true
+      xattr -d com.apple.quarantine #{app_path}
     name: sh
